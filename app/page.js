@@ -3,6 +3,7 @@ import { DashboardCards } from "./components/dashboard-cards";
 import { StatsPanel } from "./components/stats";
 import { Header } from "./components/header";
 import Flechages from "./components/flechages";
+import NoteCards from "./components/note-cards";
 
 export default function Dashboard() {
   return (
@@ -37,6 +38,7 @@ export default function Dashboard() {
 
             <StatsPanel />
             <Flechages />
+            <NoteCards />
           </div>
         </div>
       </main>

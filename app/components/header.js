@@ -6,7 +6,7 @@ import ThemeSwitcher from "./theme-switcher";
 export function Header() {
   return (
     <header
-      className="fixed bg-white z-[3] py-[20px] xl:px-[60px] md:px-[20px] px-4 border-b border-white flex items-center justify-between"
+      className="fixed bg-white z-[5] py-[20px] xl:px-[60px] md:px-[20px] px-4 border-b border-white flex items-center justify-between"
       style={{
         boxShadow: "0px 1px 0px 0px #C8C7CC80",
         width: "-webkit-fill-available !important",
