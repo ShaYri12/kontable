@@ -1,5 +1,6 @@
 import React from "react";
-import { FiUsers, FiCheck, FiX } from "react-icons/fi";
+import { FiCheck, FiX } from "react-icons/fi";
+import { RiTeamLine } from "react-icons/ri";
 
 // NoteCard component
 export function NoteCard({
@@ -10,25 +11,25 @@ export function NoteCard({
   timestamp,
 }) {
   return (
-    <div className="rounded-lg border border-gray-200 p-4 space-y-4">
+    <div className="rounded-lg border border-gray-200 bg-white p-4 space-y-4">
       <div className="flex justify-between items-start">
         <p className="text-sm text-gray-600">{content}</p>
         <span className="text-xs text-gray-500">{timestamp}</span>
       </div>
 
-      <div className="flex items-center gap-4">
-        <div className="flex items-center gap-2 text-sm text-gray-600">
-          <FiUsers className="w-4 h-4" />
+      <div className="flex items-center gap-[12px]">
+        <div className="flex items-center gap-[12px] text-sm text-gray-600">
+          <RiTeamLine className="w-4 h-4" />
           <span>{guestCount} guests</span>
         </div>
 
-        <div className="flex items-center gap-2">
-          <div className="flex items-center gap-1 px-2 py-1 rounded-full bg-green-50 text-green-600 text-xs">
+        <div className="flex items-center gap-[8px]">
+          <div className="flex items-center gap-[4px] px-2 py-1 rounded-full bg-green-50 text-green-600 text-xs">
             <FiCheck className="w-3 h-3" />
             <span>{acceptedCount}</span>
           </div>
 
-          <div className="flex items-center gap-1 px-2 py-1 rounded-full bg-gray-100 text-gray-600 text-xs">
+          <div className="flex items-center gap-[4px] px-2 py-1 rounded-full bg-gray-100 text-gray-600 text-xs">
             <FiX className="w-3 h-3" />
             <span>{rejectedCount}</span>
           </div>
