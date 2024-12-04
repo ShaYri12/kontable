@@ -56,7 +56,7 @@ export function Sidebar() {
       <div
         className={`${
           isSmall ? "hidden" : "flex"
-        } fixed right-[10px] top-[20px] z-[22]`}
+        } fixed right-[10px] md:top-[16px] top-[6px] z-[22]`}
       >
         <button
           onClick={toggleSidebar}
