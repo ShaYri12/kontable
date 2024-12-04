@@ -17,7 +17,7 @@ export function PieChart({
       </div>
 
       <div className="relative w-full aspect-square max-w-[300px] mx-auto px-[5px]">
-        <div className="absolute z-[2] flex items-center justify-center">
+        <div className="flex items-center justify-center mx-auto">
           <img
             src="/assets/pie-chart.png"
             alt={`${title} donut chart`}

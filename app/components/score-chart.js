@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import { IoMdArrowDropdown } from "react-icons/io";
+import { IoIosArrowRoundUp, IoMdArrowDropdown } from "react-icons/io";
 import { FaArrowUp } from "react-icons/fa";
 import { TbGauge } from "react-icons/tb";
 
@@ -31,7 +31,7 @@ export default function ScoreChart() {
   ];
 
   return (
-    <div className="p-[24px] bg-white rounded-2xl shadow-sm border border-gray-200">
+    <div className="p-[24px] bg-white rounded-[6px] border border-[#E5E9EB]">
       {/* Header */}
       <div className="flex items-center justify-between mb-[21px]">
         <h1 className="text-2xl font-semibold text-gray-900">Score</h1>
@@ -68,9 +68,9 @@ export default function ScoreChart() {
 
       <div className="flex flex-col gap-4">
         {/* Metrics Flex Container */}
-        <div className="flex flex-col md:flex-row md:space-x-6 space-y-6 md:space-y-0">
+        <div className="flex flex-wrap xl:gap-[22px] gap-[40px]">
           {/* Declarations Section */}
-          <div className="flex flex-col pe-[40px]">
+          <div className="flex flex-col">
             <h3 className="mb-[2px] text-[14px] font-[400] text-blackish">
               Declarations
             </h3>
@@ -78,7 +78,7 @@ export default function ScoreChart() {
           </div>
 
           {/* Fléchages Section */}
-          <div className="flex flex-col border-l border-[#E5E9EB] ps-[8px] pe-[40px]">
+          <div className="flex flex-col sm:border-l border-[#E5E9EB] ps-[8px]">
             <h3 className="mb-[2px] text-[14px] font-[400] text-blackish">
               Fléchages
             </h3>
@@ -86,33 +86,35 @@ export default function ScoreChart() {
           </div>
 
           {/* Average Time Section */}
-          <div className="flex-1 flex-col border-l border-[#E5E9EB] ps-[8px]">
+          <div className="flex-1 flex-col sm:border-l border-[#E5E9EB] ps-[8px] min-w-[145px]">
             <h3 className="mb-[2px] text-[14px] font-[400] text-blackish">
               Temps moyen par déclaration
             </h3>
-            <div className="relative">
-              <div className="absolute -top-1 -left-1">
-                <TbGauge className="w-12 h-12 text-yellow-400" />
-              </div>
-              <div className="pl-10">
-                {/* Time Display */}
-                <div className="flex items-baseline gap-1 mb-1">
+            <div className="">
+              {/* Time Display */}
+              <div className="flex items-baseline gap-[12px]">
+                <img src="/assets/meter.png" alt="meter" />
+                <div>
                   <span className="text-[30px] font-[700] text-blackish">
                     ~1:08
                   </span>
-                  <span className="text-xl font-medium text-blackish">S</span>
-                </div>
-
-                {/* Percentage Increase */}
-                <div className="flex items-center gap-1 text-green-600">
-                  <FaArrowUp className="w-3 h-3" />
-                  <span className="text-sm font-semibold">+15.50%</span>
+                  <span className="text-[25px] font-[400] text-blackish ps-[3px]">
+                    S
+                  </span>
                 </div>
               </div>
+
+              {/* Percentage Increase */}
+              <span className="text-[15.84px] flex items-center justify-center rounded-full me-[4px] text-[#478443] bg-[#4784431F] w-[21px] h-[21px] font-[500]">
+                <IoIosArrowRoundUp />
+              </span>
+              <span className="text-[#478443] text-[15px] font-medium ml-[12px]">
+                +15.50%
+              </span>
             </div>
           </div>
         </div>
-        <div className="h-[230px]">
+        <div className="min-h-[230px]">
           <img
             src="/assets/score-chart.png"
             alt="score chart"

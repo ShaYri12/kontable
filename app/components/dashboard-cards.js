@@ -52,7 +52,9 @@ export function DashboardCards() {
             key={card.title}
             className="bg-white rounded-[12px] overflow-hidden px-[22px] py-[22px] hover:shadow-lg transition-shadow relative"
             onClick={
-              card.action === "calendar" ? () => setIsDrawerOpen(true) : ""
+              card.action === "calendar"
+                ? () => setIsDrawerOpen(true)
+                : () => {}
             }
           >
             <img

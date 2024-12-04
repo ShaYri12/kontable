@@ -30,7 +30,7 @@ export default function Dashboard() {
                   <div className="font-medium">Net Enterprises</div>
                   <div className="text-sm text-gray-500">109 declarations</div>
                 </div>
-                <button className="px-4 py-2 bg-black text-white rounded-lg text-sm ml-auto">
+                <button className="px-[24px] py-[8.5px] bg-black text-white rounded-[5px] text-[15px] font-[600] ml-auto">
                   Configure
                 </button>
               </div>
@@ -40,7 +40,7 @@ export default function Dashboard() {
 
             <StatsPanel />
             <div className="flex xl:flex-row flex-col gap-[16px]">
-              <div className="xl:w-[40%]">
+              <div className="xl:w-[44%]">
                 <ScoreChart />
               </div>
               <div className="flex-1">

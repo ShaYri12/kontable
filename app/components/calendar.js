@@ -38,40 +38,57 @@ export function Drawer({ isOpen, onClose }) {
 
       <div
         id="drawer"
-        className={`fixed right-0 top-0 z-50 h-full w-full max-w-md transform bg-white shadow-xl transition-transform duration-300 ease-in-out ${
+        className={`fixed right-0 top-0 z-[99999] h-full w-full max-w-md transform bg-white shadow-xl transition-transform duration-300 ease-in-out ${
           isVisible ? "translate-x-0" : "translate-x-full"
         }`}
       >
         <button
           onClick={onClose}
-          className="absolute right-4 top-4 text-gray-500 hover:text-gray-700"
+          className="absolute right-4 top-4 bg-white border border-[#E5E9EB] w-[40px] h-[40px] flex items-center justify-center rounded-full text-blackish hover:text-gray-700 shadow-md"
           aria-label="Close drawer"
         >
           <IoMdClose size={24} />
         </button>
 
-        <div className="h-full overflow-y-auto p-6 pt-12">
-          <h2 className="mb-6 text-2xl font-bold">Calendrier 2025</h2>
+        <div className="h-full overflow-y-auto px-[20px] pt-12 pb-[20px] flex flex-col gap-[12px]">
+          <h2 className="mb-[12px] text-[24px] font-[600]">Calendrier 2025</h2>
           <CalendarEvent
             date="20 May, 2024"
             title="Ouverture de Kontable a partir du 1er Fevrier 2025"
             time="2:30 PM - 3:30 PM"
             statusText={["Status Here", "Status Here"]}
-            image="/placeholder.svg?height=150&width=300"
+            image="/assets/calendar-img-1.png"
           />
           <CalendarEvent
             date="20 May, 2024"
             title="Rendez-vous de suivi de 15 min par telephone ou en visio courant Fevrier 2025"
             time="2:30 PM - 3:30 PM"
             statusText={["Status Here"]}
-            image="/placeholder.svg?height=1&width=1"
           />
           <CalendarEvent
             date="20 May, 2024"
             title="Ouverture de Soltea a partir du lundi 26 Mai 2025"
             time="2:30 PM - 3:30 PM"
             statusText={["Status Here", "Status Here"]}
-            image="/placeholder.svg?height=150&width=300"
+            image="/assets/calendar-img-2.png"
+          />
+          <CalendarEvent
+            date="20 May, 2024"
+            title="Rendez-vous de suivi de 15 min par telephone ou en visio courant Fevrier 2025"
+            time="2:30 PM - 3:30 PM"
+            statusText={["Status Here"]}
+          />
+          <CalendarEvent
+            date="20 May, 2024"
+            title="Rendez-vous de suivi de 15 min par telephone ou en visio courant Fevrier 2025"
+            time="2:30 PM - 3:30 PM"
+            statusText={["Status Here"]}
+          />
+          <CalendarEvent
+            date="20 May, 2024"
+            title="Rendez-vous de suivi de 15 min par telephone ou en visio courant Fevrier 2025"
+            time="2:30 PM - 3:30 PM"
+            statusText={["Status Here"]}
           />
         </div>
       </div>
@@ -81,16 +98,26 @@ export function Drawer({ isOpen, onClose }) {
 
 export const CalendarEvent = ({ date, title, time, statusText, image }) => {
   return (
-    <div className="mb-4 rounded-lg border border-gray-200 p-4">
-      <div className="mb-2 text-sm text-gray-500">{date}</div>
-      <h3 className="mb-1 text-lg font-semibold">{title}</h3>
-      <div className="mb-2 text-sm text-gray-500">{time}</div>
-      <img src={image} alt={title} className="mb-2 w-full rounded-lg" />
-      <div className="flex flex-wrap gap-2">
+    <div className="flex flex-col gap-[12px] rounded-[12px] border border-[#DFE1E7] py-[16px] px-[12px]">
+      <div className="text-[14px] font-[500] text-secondary">{date}</div>
+      <h3 className="font-[500] text-black">{title}</h3>
+      <div className="font-[600] text-[#6F6F6F]">{time}</div>
+      {image && (
+        <img
+          src={image}
+          alt={title}
+          className="w-full h-[204px] object-cover rounded-[8px]"
+        />
+      )}
+      <div className="flex flex-wrap gap-[12px]">
         {statusText.map((status, index) => (
           <span
             key={index}
-            className="rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-600"
+            className={`rounded-full px-[12px] py-[4px] text-[14px] font-[500] ${
+              index === 0
+                ? "bg-[#E2F2E2] text-[#478443]"
+                : "bg-[#EAF5FF] text-[#2B7FFC]"
+            }`}
           >
             {status}
           </span>
