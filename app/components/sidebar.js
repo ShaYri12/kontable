@@ -76,13 +76,18 @@ export function Sidebar() {
             : "hidden"
         }`}
       ></div>
-
+      <div
+        className={`fixed inset-0 bg-black/10 backdrop-blur-sm transition-opacity duration-300 z-[999] ${
+          isDrawerOpen ? "opacity-100" : "opacity-0 pointer-events-none"
+        }`}
+        aria-hidden="true"
+      />
       <div
         ref={sidebarRef}
         className={`custom-scrollbar fixed top-0 bg-white h-screen overflow-y-auto border-r transition-all duration-200 lg:shadow-none shadow-md xl:px-[24px] px-4 ${
           isSmall
             ? "xl:w-[300px] xl:min-w-[300px] w-[240px] min-w-[240px] left-0 z-[10]" // Left side for smaller screens
-            : "max-w-[320px] w-full right-0 z-[20]" // Right side for larger screens
+            : "max-w-[320px] w-full right-0 z-[9999]" // Right side for larger screens
         } ${
           isDrawerOpen
             ? "lg:transalte-x-0 translate-x-0"
