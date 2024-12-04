@@ -3,7 +3,7 @@ import Image from "next/image";
 import { StatCard } from "./stats";
 
 export default function Flechages() {
-  const stats = [
+  const flechage = [
     {
       title: "Externe",
       value: 56,
@@ -74,10 +74,12 @@ export default function Flechages() {
         </h2>
       </div>
       <div className="px-[16px]">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 divide-y md:divide-y-0 md:divide-x divide-gray-200 py-[16px] border-b-[2.64px] border-[#F6F6F6]">
-          {stats.map((stat, index) => (
-            <StatCard key={index} {...stat} />
-          ))}
+        <div className="mb-[16px] border-b-[2.64px] border-[#F6F6F6]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 divide-y md:divide-y-0 md:divide-x divide-gray-200 gap-y-[30px] pb-[16px] md:gap-x-0 gap-x-[20px]">
+            {flechage.map((stat, index) => (
+              <StatCard key={index} {...stat} />
+            ))}
+          </div>
         </div>
       </div>
     </div>

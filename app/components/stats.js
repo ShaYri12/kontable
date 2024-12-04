@@ -8,7 +8,7 @@ export function StatCard({ title, value, change, icon, iconBg }) {
   const isPositive = change.value > 0;
 
   return (
-    <div className="flex flex-col px-4">
+    <div className="flex flex-col px-4 py-4">
       <div className="flex justify-between items-center gap-1">
         <h3 className="text-[18px] md:text-[20px] text-blackish font-[400]">
           {title}
@@ -116,10 +116,12 @@ export function StatsPanel() {
         </h2>
       </div>
       <div className="px-[16px]">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 divide-y md:divide-y-0 md:divide-x divide-gray-200 py-[16px] border-b-[2.64px] border-[#F6F6F6]">
-          {stats.map((stat, index) => (
-            <StatCard key={index} {...stat} />
-          ))}
+        <div className="mb-[16px] border-b-[2.64px] border-[#F6F6F6]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 divide-y md:divide-y-0 md:divide-x divide-gray-200 gap-y-[30px] pb-[16px] md:gap-x-0 gap-x-[20px]">
+            {stats.map((stat, index) => (
+              <StatCard key={index} {...stat} />
+            ))}
+          </div>
         </div>
       </div>
     </div>

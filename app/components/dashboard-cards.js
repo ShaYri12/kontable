@@ -1,10 +1,6 @@
-import {
-  RiUserAddLine,
-  RiFileAddLine,
-  RiSettings4Line,
-  RiEyeLine,
-  RiCalendarLine,
-} from "react-icons/ri";
+"use client";
+import { useState } from "react";
+import { Drawer } from "./calendar";
 
 const cards = [
   {
@@ -41,43 +37,45 @@ const cards = [
     icon: "/assets/dashboard-card-icon5.png",
     color: "cyan",
     imgSrc: "/assets/dashboard-card-bg5.png",
+    action: "calendar",
   },
 ];
 
-const colorVariants = {
-  orange: "bg-orange-50 text-orange-500",
-  green: "bg-green-50 text-green-500",
-  pink: "bg-pink-50 text-pink-500",
-  blue: "bg-blue-50 text-blue-500",
-  cyan: "bg-cyan-50 text-cyan-500",
-};
-
 export function DashboardCards() {
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
-      {cards.map((card) => (
-        <div
-          key={card.title}
-          className="bg-white rounded-[12px] overflow-hidden px-[22px] py-[22px] hover:shadow-lg transition-shadow relative"
-        >
-          <img
-            src={card.imgSrc}
-            alt="background img"
-            className="w-full h-full object-cover absolute z-[1] left-0 top-0"
-          />
-          <div className="relative z-[2]">
+    <>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
+        {cards.map((card) => (
+          <button
+            key={card.title}
+            className="bg-white rounded-[12px] overflow-hidden px-[22px] py-[22px] hover:shadow-lg transition-shadow relative"
+            onClick={
+              card.action === "calendar" ? () => setIsDrawerOpen(true) : ""
+            }
+          >
             <img
-              src={card.icon}
-              alt={card.title}
-              className="w-[162px] h-auto mx-auto"
+              src={card.imgSrc}
+              alt="background img"
+              className="w-full h-full object-cover absolute z-[1] left-0 top-0"
             />
-            <h3 className="font-[500] text-[18px] md:text-[20px] mb-[8px] text-black mt-[35px] break-words">
-              {card.title}
-            </h3>
-            <p className="text-[12px] text-secondary">{card.description}</p>
-          </div>
-        </div>
-      ))}
-    </div>
+            <div className="relative z-[2]">
+              <img
+                src={card.icon}
+                alt={card.title}
+                className="w-[162px] h-auto mx-auto"
+              />
+              <h3 className="font-[500] text-[18px] md:text-[20px] mb-[8px] text-black mt-[35px] break-words">
+                {card.title}
+              </h3>
+              <p className="text-[12px] text-secondary">{card.description}</p>
+            </div>
+          </button>
+        ))}
+      </div>
+
+      <Drawer isOpen={isDrawerOpen} onClose={() => setIsDrawerOpen(false)} />
+    </>
   );
 }

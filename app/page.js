@@ -4,6 +4,8 @@ import { StatsPanel } from "./components/stats";
 import { Header } from "./components/header";
 import Flechages from "./components/flechages";
 import NoteCards from "./components/note-cards";
+import PieCharts from "./components/pie-charts";
+import ScoreChart from "./components/score-chart";
 
 export default function Dashboard() {
   return (
@@ -12,7 +14,7 @@ export default function Dashboard() {
       <main className="flex-1 relative">
         <Header />
         <div className="xl:px-[30px] md:px-[20px] px-4 pb-[20px] pt-[110px]">
-          <div className="max-w-[1280px] mx-auto space-y-[24px]">
+          <div className="max-w-[1440px] mx-auto space-y-[24px]">
             <DashboardCards />
 
             <div className="relative">
@@ -37,6 +39,14 @@ export default function Dashboard() {
             </div>
 
             <StatsPanel />
+            <div className="flex xl:flex-row flex-col gap-[16px]">
+              <div className="xl:w-[40%]">
+                <ScoreChart />
+              </div>
+              <div className="flex-1">
+                <PieCharts />
+              </div>
+            </div>
             <Flechages />
             <NoteCards />
           </div>
