@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { IoMdClose } from "react-icons/io";
+import { LuCalendar } from "react-icons/lu";
 
 export function Drawer({ isOpen, onClose }) {
   const [isVisible, setIsVisible] = useState(false);
@@ -99,7 +100,12 @@ export function Drawer({ isOpen, onClose }) {
 export const CalendarEvent = ({ date, title, time, statusText, image }) => {
   return (
     <div className="flex flex-col gap-[12px] rounded-[12px] border border-[#DFE1E7] py-[16px] px-[12px]">
-      <div className="text-[14px] font-[500] text-secondary">{date}</div>
+      <div className="text-[14px] font-[500] text-secondary flex items-center gap-[4px]">
+        <span className="w-[16px] h-[16px]">
+          <LuCalendar size={16} />
+        </span>
+        {date}
+      </div>
       <h3 className="font-[500] text-black">{title}</h3>
       <div className="font-[600] text-[#6F6F6F]">{time}</div>
       {image && (
