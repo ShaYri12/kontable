@@ -18,19 +18,23 @@ export default function Dashboard() {
             <DashboardCards />
 
             <div className="relative">
-              <div className="bg-white border border-[#E5E9EB] rounded-[6px] px-[24px] py-[12px] flex items-center gap-4 shadow-md relative z-[3]">
-                <div className="w-[50px] h-[50px] bg-[#E8F1E7] rounded-[4px] flex items-center justify-center">
-                  <img
-                    src="/assets/enterprises.png"
-                    alt="Net Enterprises"
-                    className="w-[22px] h-auto"
-                  />
+              <div className="bg-white border border-[#E5E9EB] rounded-[6px] px-[24px] py-[12px] flex flex-wrap items-center justify-between gap-4 shadow-md relative z-[3]">
+                <div className="flex items-center gap-4">
+                  <div className="w-[50px] h-[50px] bg-[#E8F1E7] rounded-[4px] flex items-center justify-center">
+                    <img
+                      src="/assets/enterprises.png"
+                      alt="Net Enterprises"
+                      className="w-[22px] h-auto"
+                    />
+                  </div>
+                  <div>
+                    <div className="font-medium">Net Enterprises</div>
+                    <div className="text-sm text-gray-500">
+                      109 declarations
+                    </div>
+                  </div>
                 </div>
-                <div>
-                  <div className="font-medium">Net Enterprises</div>
-                  <div className="text-sm text-gray-500">109 declarations</div>
-                </div>
-                <button className="px-[24px] py-[8.5px] bg-black text-white rounded-[5px] text-[15px] font-[600] ml-auto">
+                <button className="px-[24px] py-[8.5px] bg-black text-white rounded-[5px] text-[15px] font-[600]">
                   Configure
                 </button>
               </div>
