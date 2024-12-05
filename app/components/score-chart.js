@@ -2,8 +2,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import { IoIosArrowRoundUp, IoMdArrowDropdown } from "react-icons/io";
-import { FaArrowUp } from "react-icons/fa";
-import { TbGauge } from "react-icons/tb";
+import StackedBarChart from "./bar-chart";
 
 export default function ScoreChart() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -105,22 +104,19 @@ export default function ScoreChart() {
               </div>
 
               {/* Percentage Increase */}
-              <span className="text-[15.84px] flex items-center justify-center rounded-full me-[4px] text-[#478443] bg-[#4784431F] w-[21px] h-[21px] font-[500]">
-                <IoIosArrowRoundUp />
-              </span>
-              <span className="text-[#478443] text-[15px] font-medium ml-[12px]">
-                +15.50%
-              </span>
+              <div className="flex items-center gap-[8px]">
+                <span className="text-[15.84px] flex items-center justify-center rounded-full me-[4px] text-[#478443] bg-[#4784431F] w-[21px] h-[21px] font-[500]">
+                  <IoIosArrowRoundUp />
+                </span>
+                <span className="text-[#478443] text-[15px] font-medium">
+                  +15.50%
+                </span>
+              </div>
             </div>
           </div>
         </div>
-        <div className="min-h-[230px]">
-          <img
-            src="/assets/score-chart.png"
-            alt="score chart"
-            className="w-full h-full object-contain"
-          />
-        </div>
+
+        <StackedBarChart />
       </div>
     </div>
   );
